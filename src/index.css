@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  @apply antialiased font-sans;
+  background-color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.card-3d {
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  perspective: 1000px;
+  transform-origin: center;
+}
+
+.card-3d:hover {
+  transform: rotate3d(0.5, 1, 0, 45deg); /* Increased from 30deg to 45deg */
+}
+
+.card-3d .float-3d {
+  transform: translate3d(0px, 0px, 40px); /* More depth */
+  transition: transform 0.5s ease;
+}
+.card-3d:hover .float-3d {
+  transform: translate3d(0px, 0px, 80px); /* More "pop" */
+}
+
